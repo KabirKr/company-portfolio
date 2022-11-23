@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string
+  body: string
+  icon: string
+  href: string
+}
+
+const { title, body, icon, href } = Astro.props as Props
+---
+
+<div class="bg-white text-center h-100 p-4 p-xl-5 shadow-sm">
+  <img class="img-fluid mb-4" src={icon} alt="" />
+  <h4 class="mb-3">{title}</h4>
+  <p class="mb-4">{body}</p>
+
+  <a
+    class="btn btn-outline-primary d-inline-flex align-items-center px-3"
+    href={href}
+  >
+    <span>Learn More</span>
+
+    <span class="circle bg-light p-2 ms-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        style="width: 18px; height: 18px;"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </a>
+</div>
+
+<style lang="scss">
+  .btn:hover {
+    svg {
+      fill: var(--bs-primary);
+    }
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+export interface Props {
+  accordionId: string
+  items: {
+    id: string
+    title: string
+    body: string
+    isOpen?: boolean
+  }[]
+}
+
+const { accordionId, items } = Astro.props as Props
+---
+
+<div class="accordion" id={accordionId}>
+  {
+    items.map((item) => (
+      <div class="accordion-item">
+        <h2 class="accordion-header" id={`heading-${item.id}`}>
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target={`#${item.id}`}
+            aria-expanded="true"
+            aria-controls={item.id}
+          >
+            {item.title}
+          </button>
+        </h2>
+
+        <div
+          id={item.id}
+          class={`accordion-collapse collapse ${item.isOpen && 'show'}`}
+          aria-labelledby={`heading-${item.id}`}
+          data-bs-parent={`#${accordionId}`}
+        >
+          <div class="accordion-body">{item.body}</div>
+        </div>
+      </div>
+    ))
+  }
+</div>

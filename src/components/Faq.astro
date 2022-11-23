@@ -1,0 +1,34 @@
+---
+import Accordion from './Accordion/Accordion.astro'
+
+const faqs = [
+  {
+    id: 'faq-1',
+    title: 'What is a static website ?',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptates consectetur minima porro ut earum provident pariatur vero, libero consequatur error, nemo quaerat, sapiente ad ullam rerum inventore eos! Esse.',
+    isOpen: true,
+  },
+  {
+    id: 'faq-2',
+    title: 'What is a dynamic website ?',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptates consectetur minima porro ut earum provident pariatur vero, libero consequatur error, nemo quaerat, sapiente ad ullam rerum inventore eos! Esse.',
+  },
+  {
+    id: 'faq-3',
+    title: 'What kind of website do I nedd ?',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptates consectetur minima porro ut earum provident pariatur vero, libero consequatur error, nemo quaerat, sapiente ad ullam rerum inventore eos! Esse.',
+  },
+]
+---
+
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+      <h2 class="display-6 text-capitalize mb-5">
+        Frequently asked questions (FAQ)
+      </h2>
+    </div>
+
+    <Accordion accordionId="accordion-faq" items={faqs} />
+  </div>
+</section>

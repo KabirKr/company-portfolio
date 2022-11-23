@@ -1,0 +1,29 @@
+---
+import ProjectCard from './ProjectCard.astro'
+
+import imgMedhasvini from '../../img/projects/medhasvini.png'
+import imgWildEndeavour from '../../img/projects/wild-endeavour.png'
+
+const projects = [
+  { title: 'Medhasvini', img: imgMedhasvini, href: '#' },
+  { title: 'Wild Endeavour', img: imgWildEndeavour, href: '#' },
+]
+---
+
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+      <h2 class="display-6 text-capitalize mb-5">Our recent projects</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {
+        projects.map((project) => (
+          <div class="col-12 col-md-6">
+            <ProjectCard {...project} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

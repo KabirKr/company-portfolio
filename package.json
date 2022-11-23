@@ -1,0 +1,23 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "yarn compile:bootstrap && yarn astro dev",
+    "start": "yarn compile:bootstrap && yarn astro dev",
+    "build": "yarn compile:bootstrap && yarn astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "compile:bootstrap": "sass src/scss/bootstrap.scss src/styles/bootstrap.css",
+    "watch:bootstrap": "sass -w src/scss/bootstrap.scss src/styles/bootstrap.css"
+  },
+  "dependencies": {
+    "astro": "^1.6.10"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.7.0",
+    "sass": "^1.56.1"
+  }
+}

@@ -1,0 +1,46 @@
+---
+import ServiceCard from './ServiceCard.astro'
+
+import icon1 from '../../img/icon-1.png'
+import icon2 from '../../img/icon-2.png'
+import icon3 from '../../img/icon-3.png'
+
+const services = [
+  {
+    title: 'Static Website Development',
+    body: ' Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.',
+    icon: icon1,
+    href: '#',
+  },
+  {
+    title: 'Dynamic Website Development',
+    body: ' Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.',
+    icon: icon2,
+    href: '#',
+  },
+  {
+    title: 'Custom HTML Email Template Design',
+    body: ' Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.',
+    icon: icon3,
+    href: '#',
+  },
+]
+---
+
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+      <h2 class="display-6 text-capitalize mb-5">Our services</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {
+        services.map((service) => (
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.5s">
+            <ServiceCard {...service} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import Cta from './Cta.astro'
+
+import { NAV_ITEMS } from '../../constants/app'
+---
+
+<nav
+  class="navbar bg-white navbar-expand-lg py-lg-2 px-lg-5 shadow-sm"
+  id="js-navbar"
+>
+  <div class="container-xxl">
+    <a href="/" class="navbar-brand">
+      <span class="h1 fw-bold text-primary m-0">
+        Web<span class="text-dark">Dev</span>
+      </span>
+    </a>
+
+    <div class="d-lg-none">
+      <Cta />
+    </div>
+
+    <button
+      type="button"
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ms-auto p-4 p-lg-0">
+        {
+          NAV_ITEMS.map((item) => (
+            <li class="nav-item">
+              <a href={item.href} class="nav-item text-dark nav-link">
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="d-none d-lg-block">
+      <Cta />
+    </div>
+  </div>
+</nav>
